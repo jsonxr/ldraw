@@ -1,0 +1,10 @@
+{
+  "prettier.configPath": ".prettierrc.js",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "files.exclude": {
+    ".vscode": true,
+    "**/build": true,
+    "**/node_modules": true
+  }
+}

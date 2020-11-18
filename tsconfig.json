@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.build.json",
+
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "ldraw": ["packages/ldraw/src"],
+      "ldraw-react": ["packages/ldraw-react/src"]
+    },
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

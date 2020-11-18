@@ -1,0 +1,57 @@
+{
+  "name": "ldraw-editor",
+  "description": "Example of using create-react-app in a TS monorepo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf yarn-error.log && rimraf build",
+    "start": "SKIP_PREFLIGHT_CHECK=true react-app-rewired start",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-app-rewired build",
+    "lint": "./node_modules/.bin/eslint '{src,test}/**/*.{js,ts,tsx,jsx,json}'",
+    "test": "./node_modules/.bin/jest",
+    "rebuild2": "yarn clean && yarn lint && yarn test && yarn build",
+    "ldraw:install": "curl -o ldraw.zip http://www.ldraw.org/library/updates/complete.zip && unzip ldraw.zip -d public/static && rm ldraw.zip"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "ldraw": "1.0.0",
+    "ldraw-react": "1.0.0",
+    "react": "^16.14",
+    "react-dom": "^16.14",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.4",
+    "jest": "^26.5.3",
+    "prettier": "^2.1.2",
+    "react-app-rewired": "~2.1.6",
+    "react-scripts": "~3.4.1",
+    "react-test-renderer": "^16.14.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
