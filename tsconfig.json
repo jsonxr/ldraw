@@ -4,11 +4,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "ldraw": ["packages/ldraw/src"],
-      "ldraw-react": ["packages/ldraw-react/src"]
+      "ldraw-cli": ["ldraw-cli/src"],
+      "ldraw": ["ldraw/src"],
+      "react-ldraw": ["react-ldraw/src"],
+      "ldraw-editor": ["ldraw-editor/src"],
     },
     "jsx": "preserve",
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+  },
+  "exclude": ["dist/**/*"]
 }

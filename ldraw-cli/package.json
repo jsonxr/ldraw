@@ -1,0 +1,39 @@
+{
+  "name": "ldraw-cli",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/csm/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "ldraw": "dist/csj/cli.js"
+  },
+  "scripts": {
+    "build": "rimraf -rf ./dist && yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc -p tsconfig.build.json",
+    "build:cjs": "tsc -p tsconfig.build-cjs.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/jest": "^26.0.14",
+    "@types/node": "^14.11.10",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.5.3",
+    "jest-fetch-mock": "^3.0.3",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "ldraw": "1.0.0",
+    "yargs": "^16.1.1"
+  }
+}

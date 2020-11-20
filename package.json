@@ -1,14 +1,17 @@
 {
-  "name": "ts-monorepo",
+  "name": "ldraw",
   "description": "Template for setting up a TypeScript monorepo",
   "private": true,
   "license": "MIT",
   "workspaces": [
-    "packages/*"
+    "ldraw",
+    "ldraw-cli",
+    "ldraw-editor",
+    "react-ldraw"
   ],
   "scripts": {
     "clean": "lerna run clean",
-    "nuke": "yarn run clean && rimraf -rf packages/*/node_modules && rimraf yarn.lock && rimraf -rf node_modules",
+    "nuke": "yarn run clean && rimraf -rf */node_modules && rimraf yarn.lock && rimraf -rf node_modules",
     "build": "lerna run build",
     "lint": "lerna run lint",
     "test": "lerna run test",

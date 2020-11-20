@@ -1,0 +1,161 @@
+ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+1 			White 	 12139 	 9244 	 16794 	 12146 	 1950 - 2020 
+49 			Very Light Gray 	 22 	 24 	 1001 	 57 	 1997 - 2004 
+99 			Very Light Bluish Gray 	 50 	 46 	 1622 	 92 	 2004 - 2013 
+86 			Light Bluish Gray 	 3716 	 5749 	 6622 	 4160 	 2003 - 2020 
+9 			Light Gray 	 1842 	 3182 	 4610 	 2361 	 1954 - 2008 
+10 			Dark Gray 	 1037 	 1694 	 3323 	 1423 	 1961 - 2007 
+85 			Dark Bluish Gray 	 3325 	 5338 	 6230 	 3683 	 2003 - 2020 
+11 			Black 	 9833 	 10854 	 13762 	 10136 	 1957 - 2020 
+59 			Dark Red 	 1387 	 1463 	 3028 	 1448 	 1961 - 2020 
+5 			Red 	 6702 	 9275 	 10041 	 7164 	 1950 - 2020 
+27 			Rust 	 9 	 13 	 892 	 30 	 1989 - 2001 
+220 			Coral 	 89 	 114 	 324 	 94 	 2019 - 2020 
+231 			Dark Salmon 	 1 	 1 	 3 	 1 	 2003 - 2003 
+25 			Salmon 	 87 	 31 	 286 	 88 	 1997 - 2003 
+26 			Light Salmon 	 49 	 19 	 282 	 52 	 1997 - 1999 
+58 			Sand Red 	 39 	 18 	 345 	 45 	 2001 - 2004 
+88 			Reddish Brown 	 1669 	 3385 	 3323 	 1869 	 2003 - 2020 
+8 			Brown 	 569 	 1082 	 2623 	 885 	 1974 - 2006 
+120 			Dark Brown 	 629 	 1264 	 2202 	 679 	 2008 - 2020 
+69 			Dark Tan 	 884 	 1821 	 2391 	 928 	 1961 - 2020 
+2 			Tan 	 1907 	 3791 	 4065 	 2119 	 1958 - 2020 
+90 			Light Nougat 	 1372 	 1336 	 2425 	 1345 	 2004 - 2020 
+28 			Nougat 	 144 	 192 	 944 	 185 	 1979 - 2020 
+150 			Medium Nougat 	 659 	 1016 	 1490 	 693 	 2010 - 2020 
+225 			Dark Nougat 	 3 	 10 	 230 	 10 	 2001 - 2004 
+91 			Medium Brown 	 40 	 28 	 1005 	 73 	 2002 - 2006 
+106 			Fabuland Brown 	 8 	 28 	 651 	 21 	 1979 - 1997 
+160 			Fabuland Orange 	 1 	 1 	 250 	 5 	 1983 - 1983 
+29 			Earth Orange 	 36 	 87 	 481 	 55 	 1982 - 2006 
+68 			Dark Orange 	 593 	 1306 	 1778 	 670 	 1979 - 2020 
+165 			Neon Orange 	  	  	 230 	 7 	 ? 
+4 			Orange 	 1644 	 2738 	 3291 	 1829 	 1993 - 2020 
+31 			Medium Orange 	 138 	 117 	 787 	 172 	 1950 - 2012 
+110 			Bright Light Orange 	 856 	 1174 	 1963 	 940 	 2000 - 2020 
+32 			Light Orange 	 16 	 16 	 323 	 55 	 1998 - 2005 
+96 			Very Light Orange 	 1 	 2 	 251 	 14 	 2000 - 2000 
+161 			Dark Yellow 	 4 	 4 	 449 	 19 	 2004 - 2005 
+3 			Yellow 	 5963 	 9103 	 9067 	 6800 	 1950 - 2020 
+103 			Bright Light Yellow 	 315 	 509 	 1419 	 356 	 2004 - 2020 
+33 			Light Yellow 	 95 	 74 	 927 	 157 	 1994 - 2011 
+35 			Light Lime 	 18 	 15 	 255 	 42 	 1992 - 2007 
+158 			Yellowish Green 	 144 	 177 	 415 	 156 	 2012 - 2020 
+166 			Neon Green 	  	  	 241 	 14 	 ? 
+76 			Medium Lime 	 63 	 36 	 307 	 82 	 1998 - 2005 
+34 			Lime 	 1432 	 1988 	 2289 	 1548 	 1982 - 2020 
+155 			Olive Green 	 449 	 348 	 1529 	 479 	 2012 - 2020 
+80 			Dark Green 	 766 	 805 	 2350 	 832 	 1961 - 2020 
+6 			Green 	 1830 	 4568 	 3842 	 2107 	 1950 - 2020 
+36 			Bright Green 	 506 	 1497 	 1756 	 596 	 1950 - 2020 
+37 			Medium Green 	 121 	 99 	 472 	 145 	 1950 - 2004 
+38 			Light Green 	 70 	 64 	 468 	 114 	 1992 - 2007 
+48 			Sand Green 	 518 	 478 	 1437 	 572 	 1964 - 2020 
+39 			Dark Turquoise 	 331 	 347 	 936 	 405 	 1998 - 2020 
+40 			Light Turquoise 	 48 	 39 	 430 	 79 	 1998 - 2004 
+41 			Aqua 	 80 	 60 	 904 	 113 	 1998 - 2006 
+152 			Light Aqua 	 309 	 324 	 659 	 325 	 2011 - 2020 
+63 			Dark Blue 	 1759 	 1655 	 3382 	 1807 	 1961 - 2020 
+7 			Blue 	 3595 	 7380 	 5933 	 4004 	 1950 - 2020 
+153 			Dark Azure 	 492 	 596 	 1333 	 511 	 2000 - 2020 
+156 			Medium Azure 	 623 	 969 	 1291 	 646 	 2012 - 2020 
+42 			Medium Blue 	 742 	 985 	 1724 	 849 	 1950 - 2020 
+72 			Maersk Blue 	 84 	 14 	 454 	 122 	 1974 - 2011 
+105 			Bright Light Blue 	 284 	 396 	 1109 	 325 	 2004 - 2020 
+62 			Light Blue 	 41 	 32 	 694 	 112 	 1950 - 2007 
+87 			Sky Blue 	 29 	 25 	 455 	 44 	 2003 - 2007 
+55 			Sand Blue 	 553 	 465 	 1520 	 603 	 2001 - 2020 
+97 			Blue-Violet 	 37 	 17 	 526 	 61 	 2004 - 2005 
+109 			Dark Blue-Violet 	 7 	 5 	 533 	 15 	 2004 - 2006 
+43 			Violet 	 78 	 44 	 394 	 90 	 1992 - 2004 
+73 			Medium Violet 	 17 	 22 	 152 	 24 	 1999 - 2005 
+44 			Light Violet 	 70 	 39 	 263 	 87 	 1994 - 2004 
+89 			Dark Purple 	 760 	 892 	 1661 	 834 	 2003 - 2020 
+24 			Purple 	 144 	 134 	 1040 	 265 	 1996 - 2008 
+93 			Light Purple 	 26 	 14 	 346 	 63 	 1999 - 2006 
+157 			Medium Lavender 	 375 	 466 	 688 	 388 	 2012 - 2020 
+227 			Clikits Lavender 	 9 	 12 	 34 	 9 	 2005 - 2005 
+154 			Lavender 	 226 	 311 	 575 	 268 	 2004 - 2020 
+54 			Sand Purple 	 20 	 5 	 290 	 22 	 2001 - 2002 
+71 			Magenta 	 438 	 691 	 1080 	 474 	 2000 - 2020 
+47 			Dark Pink 	 613 	 941 	 1222 	 684 	 1994 - 2020 
+94 			Medium Dark Pink 	 14 	 7 	 223 	 50 	 1992 - 1996 
+104 			Bright Pink 	 486 	 891 	 1098 	 519 	 2003 - 2020 
+23 			Pink 	 120 	 78 	 738 	 217 	 1991 - 2005 
+56 			Light Pink 	 6 	 12 	 322 	 56 	 1994 - 2007 
+Transparent Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+12 			Trans-Clear 	 842 	 4397 	 2260 	 1058 	 1950 - 2020 
+13 			Trans-Black 	 407 	 1570 	 1041 	 476 	 1999 - 2020 
+17 			Trans-Red 	 199 	 3343 	 820 	 264 	 1969 - 2020 
+18 			Trans-Neon Orange 	 208 	 1015 	 622 	 307 	 1993 - 2020 
+98 			Trans-Orange 	 178 	 1592 	 551 	 249 	 2003 - 2020 
+164 			Trans-Light Orange 	 36 	 22 	 269 	 72 	 2003 - 2006 
+121 			Trans-Neon Yellow 	 26 	 33 	 282 	 76 	 2001 - 2006 
+19 			Trans-Yellow 	 199 	 2220 	 679 	 265 	 1969 - 2020 
+16 			Trans-Neon Green 	 221 	 1075 	 606 	 280 	 1990 - 2020 
+108 			Trans-Bright Green 	 142 	 397 	 459 	 181 	 2006 - 2020 
+221 			Trans-Light Green 	 9 	 3 	 85 	 19 	 2005 - 2006 
+226 			Trans-Light Bright Green 	 26 	 18 	 85 	 38 	 2003 - 2006 
+20 			Trans-Green 	 134 	 1355 	 566 	 185 	 1969 - 2020 
+14 			Trans-Dark Blue 	 251 	 1525 	 952 	 316 	 1978 - 2020 
+74 			Trans-Medium Blue 	 100 	 202 	 635 	 145 	 2001 - 2018 
+15 			Trans-Light Blue 	 668 	 2412 	 1487 	 804 	 1985 - 2020 
+113 			Trans-Aqua 	 36 	 38 	 308 	 47 	 2003 - 2006 
+114 			Trans-Light Purple 	 17 	 18 	 157 	 31 	 2005 - 2006 
+51 			Trans-Purple 	 145 	 333 	 461 	 182 	 2000 - 2020 
+50 			Trans-Dark Pink 	 194 	 584 	 412 	 221 	 1998 - 2020 
+107 			Trans-Pink 	 60 	 44 	 196 	 79 	 2003 - 2006 
+Chrome Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+21 			Chrome Gold 	 52 	 265 	 1263 	 59 	 1989 - 2020 
+22 			Chrome Silver 	 106 	 557 	 1849 	 176 	 1966 - 2018 
+57 			Chrome Antique Brass 	 3 	 15 	 238 	 4 	 2001 - 2005 
+122 			Chrome Black 	 11 	 1 	 860 	 12 	 2009 - 2009 
+52 			Chrome Blue 	 5 	 14 	 290 	 17 	 1998 - 2006 
+64 			Chrome Green 	 1 	 2 	 215 	 5 	 1999 - 1999 
+82 			Chrome Pink 	 3 	 12 	 101 	 8 	 2001 - 2007 
+Pearl Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+83 			Pearl White 	 4 	 8 	 355 	 16 	 2003 - 2006 
+119 			Pearl Very Light Gray 	 14 	 10 	 443 	 44 	 2002 - 2004 
+66 			Pearl Light Gray 	 421 	 618 	 1448 	 595 	 1993 - 2013 
+95 			Flat Silver 	 874 	 2364 	 2285 	 1002 	 1998 - 2020 
+77 			Pearl Dark Gray 	 566 	 897 	 2158 	 647 	 2002 - 2020 
+61 			Pearl Light Gold 	 16 	 9 	 284 	 52 	 2000 - 2006 
+115 			Pearl Gold 	 793 	 1716 	 2058 	 891 	 2002 - 2020 
+81 			Flat Dark Gold 	 39 	 41 	 599 	 110 	 2003 - 2007 
+84 			Copper 	 58 	 74 	 813 	 85 	 2001 - 2020 
+78 			Metal Blue 	 41 	 21 	 305 	 52 	 2002 - 2006 
+Satin Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+228 			Satin White 	 3 	 3 	 45 	 4 	 2020 - 2020 
+229 			Satin Trans-Black 	 1 	 1 	 12 	 2 	 2020 - 2020 
+223 			Satin Trans-Light Blue 	 5 	 14 	 32 	 9 	 2020 - 2020 
+230 			Satin Trans-Purple 	 1 	 5 	 11 	 2 	 2020 - 2020 
+224 			Satin Trans-Dark Pink 	 4 	 9 	 28 	 4 	 2020 - 2020 
+Metallic Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+67 			Metallic Silver 	 177 	 611 	 1759 	 255 	 1957 - 2020 
+70 			Metallic Green 	 26 	 7 	 276 	 37 	 2001 - 2018 
+65 			Metallic Gold 	 81 	 213 	 1044 	 160 	 1997 - 2020 
+Milky Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+60 			Milky White 	 26 	 140 	 441 	 62 	 1963 - 2008 
+159 			Glow In Dark White 	 29 	 50 	 702 	 48 	 2012 - 2020 
+46 			Glow In Dark Opaque 	 41 	 87 	 557 	 107 	 1990 - 2011 
+118 			Glow In Dark Trans 	 16 	 22 	 270 	 19 	 2005 - 2011 
+Glitter Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+101 			Glitter Trans-Clear 	 16 	 24 	 95 	 19 	 1999 - 2020 
+222 			Glitter Trans-Orange 	 1 	 1 	 27 	 1 	 2020 - 2020 
+163 			Glitter Trans-Neon Green 	 1 	 8 	 68 	 3 	 2015 - 2018 
+162 			Glitter Trans-Light Blue 	 16 	 24 	 107 	 20 	 2015 - 2020 
+102 			Glitter Trans-Purple 	 10 	 42 	 112 	 13 	 2000 - 2020 
+100 			Glitter Trans-Dark Pink 	 12 	 34 	 99 	 15 	 1999 - 2020 
+Speckle Colors
+ ID 			Name 	 Parts 	 In Sets 	 Wanted 	 For Sale 	 Color Timeline 
+111 			Speckle Black-Silver 	 15 	 46 	 124 	 21 	 2005 - 2013 
+151 			Speckle Black-Gold 	 2 	 4 	 149 	 5 	 2010 - 2011 
+116 			Speckle Black-Copper 	 5 	 3 	 118 	 8 	 2006 - 2006 
+117 			Speckle DBGray-Silver 	 5 	 7 	 160 	 8 	 2006 - 2006 

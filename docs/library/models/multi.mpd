@@ -1,0 +1,18 @@
+0 FILE main.ldr
+0 main
+0 Name: main.ldr
+0 Author: Jason Rowland [jason]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+
+1 7 0 0 0 1 0 0 0 1 0 0 0 1 3001.dat
+1 4 80 -8 70 1 0 0 0 1 0 0 0 1 house.ldr
+
+0 FILE house.ldr
+0 house
+0 Name: house.ldr
+0 Author: Jason Rowland [jason]
+0 !LDRAW_ORG Model
+0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+
+1 16 0 0 0 1 0 0 0 1 0 0 0 1 3002.dat
