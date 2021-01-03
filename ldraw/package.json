@@ -1,6 +1,6 @@
 {
   "name": "ldraw",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "main": "lib/cjs/index.js",
   "module": "lib/index.js",
@@ -19,6 +19,10 @@
     "lib",
     "example/index.html"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jsonxr/ldraw.git"
+  },
   "scripts": {
     "clean": "rimraf -rf ./lib ./coverage yarn-error.log __ldraw",
     "build": "rimraf -rf ./lib && rollup -c && echo '{ \"type\": \"commonjs\"}' > lib/cjs/package.json && echo '{ \"type\": \"module\"}' > lib/package.json",
