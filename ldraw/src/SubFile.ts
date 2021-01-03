@@ -1,5 +1,5 @@
 import { Matrix4 } from './Matrix4';
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 //------------------------------------------------------------------------------
 // Line Type 1: Sub-file reference
 //------------------------------------------------------------------------------
@@ -34,14 +34,14 @@ import { Spec, SpecType } from './Spec';
  *   - LDRAW\PARTS
  *   - LDRAW\P
  *   - LDRAW\MODELS
- *   - the current file's directory
- *
- *   - a path relative to one of these directories, or a full path may be specified.
+ *   - the current file's directory !!!! Not yet supported
+ *   - a path relative to one of these directories
+ *   - or a full path may be specified. !!!! Not supported for web
  */
 
-export class SubFile implements Spec {
-  type = SpecType.SUBFILE;
-  lineNo?: number;
+export class SubFile implements Command {
+  type: CommandType = 'SUBFILE';
+  lineNo: number = 0;
   colour = 0;
   x = 0;
   y = 0;

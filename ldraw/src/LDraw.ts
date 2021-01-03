@@ -8,7 +8,7 @@ import { parse } from './parser/parse';
 // MPD - Multi-Part Document
 // LDR - Lego
 // DAT
-import { LoadFile } from './LoadFile';
+import { LoadFile } from './loaders/LoadFile';
 import { UrlLoader } from './loaders/UrlLoader';
 
 //----------------------------------------------------------------------------
@@ -19,9 +19,9 @@ import { UrlLoader } from './loaders/UrlLoader';
  * base: URL - This is the location of the ldraw library. This end point must have CORS enabled if it is not hosted on the same server
  */
 export class LDraw {
-  cache = new Cache<LDrawFile>();
-  folders = ['/parts', '/p', '/models'];
-  loadFile: LoadFile = UrlLoader(new URL('http://localhost:8080'));
+  readonly cache = new Cache<LDrawFile>();
+  folders = ['parts', 'p', 'models'];
+  loaders: LoadFile[] = [UrlLoader()];
   missing: string[] = [];
 
   get list(): Record<string, LDrawFile> {
@@ -29,13 +29,13 @@ export class LDraw {
   }
 
   get parts(): SingleFile[] {
-    const PART_TYPES = [LDrawFileType.Part, LDrawFileType.Unofficial_Part];
+    const PART_TYPES: LDrawFileType[] = ['Part', 'Unofficial_Part'];
     return (Object.values(this.list).filter(
       (m: LDrawFile) => m && PART_TYPES.includes(m.type)
     ) as unknown) as SingleFile[];
   }
 
-  constructor(props?: Partial<LDraw>) {
+  constructor(props?: Partial<Pick<LDraw, 'folders' | 'loaders'>>) {
     Object.assign(this, props);
   }
 
@@ -43,8 +43,16 @@ export class LDraw {
    *
    * @param filename - the absolute path of the model to load.
    */
-  async load(filename: string): Promise<LDrawFile | null> {
-    const data = await this.loadFile(filename);
+  async load(filename: string, loader?: LoadFile): Promise<LDrawFile | null> {
+    const loaders = loader ? [loader] : this.loaders;
+    let data = null;
+    for (let i = 0; i < loaders.length; i++) {
+      data = await loaders[i](filename);
+      if (data !== null) {
+        break;
+      }
+    }
+
     if (!data) {
       return null;
     }
@@ -78,13 +86,19 @@ export class LDraw {
           .map((f: string) =>
             f.endsWith('/') ? f.substr(0, f.length - 1) : f
           );
-        for (const folder of folders) {
-          const model = await this.load(`${folder}/${filename}`);
-          if (model) {
-            model.name = filename;
-            return model;
+
+        // We want to exhaust all the folders on a loader before trying the next
+        for (let i = 0; i < this.loaders.length; i++) {
+          for (const folder of folders) {
+            const loader = this.loaders[i];
+            const model = await this.load(`${folder}/${filename}`, loader);
+            if (model) {
+              model.name = filename;
+              return model;
+            }
           }
         }
+
         return null;
       }
     );

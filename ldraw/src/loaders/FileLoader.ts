@@ -1,13 +1,22 @@
 import fs from 'fs/promises';
-import { LoadFile } from '../LoadFile';
+import path from 'path';
+
 /**
  * Load file via fetch to same server in /ldraw folder
  * @param filename
  */
+export const FileLoader = (dir?: string) => {
+  const root = dir ?? path.resolve('./');
 
-const FileLoader = (): LoadFile => async (filename: string) => {
-  //const absoluteFilename = path.resolve(path.join(dir, filename));
-  return await fs.readFile(filename, { encoding: 'utf8' });
+  const Loader = async (filename: string) => {
+    const filePath = path.isAbsolute(filename)
+      ? filename
+      : path.resolve(path.join(root, filename));
+    try {
+      return await fs.readFile(filePath, { encoding: 'utf8' });
+    } catch {} // Ignore any errors
+    return null;
+  };
+
+  return Loader;
 };
-
-export default FileLoader;

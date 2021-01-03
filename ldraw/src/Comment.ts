@@ -1,4 +1,4 @@
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 
 //------------------------------------------------------------------------------
 // Line Type 0: Comments
@@ -6,11 +6,11 @@ import { Spec, SpecType } from './Spec';
 /**
  *
  */
-export class Comment implements Spec {
-  type = SpecType.COMMENT;
-  lineNo = -1;
+export class Comment implements Command {
+  type: CommandType = 'COMMENT';
+  lineNo = 0;
   line = '';
-  constructor(props: Omit<Comment, 'type'>) {
+  constructor(props?: Omit<Comment, 'type'>) {
     Object.assign(this, props);
   }
 }

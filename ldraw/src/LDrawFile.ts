@@ -1,19 +1,21 @@
 import { SingleFile } from './SingleFile';
 import { MpdFile } from './MpdFile';
+import { Data } from './Data';
 
-export enum LDrawFileType {
-  Unknown = '',
-  Mpd = 'Mpd',
-  Shortcut = 'Shortcut',
-  Subpart = 'Subpart',
-  Model = 'Model',
-  Part = 'Part',
-  Primitive = 'Primitive',
-  Primitive8 = '8_Primitive',
-  Primitive48 = '48_Primitive',
-  Unofficial_Part = 'Unofficial_Part',
-  Unofficial_Primitive = 'Unofficial_Primitive',
-}
+export type LDrawFileType =
+  | 'Unknown'
+  | 'Configuration'
+  | 'Mpd'
+  | 'Shortcut'
+  | 'Subpart'
+  | 'Model'
+  | 'Part'
+  | 'Primitive'
+  | '8_Primitive'
+  | '48_Primitive'
+  | 'Unofficial_Part'
+  | 'Unofficial_Subpart'
+  | 'Unofficial_Primitive';
 
 export interface LDrawFile {
   name: string;
@@ -24,11 +26,41 @@ export interface LDrawFile {
   filenames: string[];
 }
 
-export const isMpd = (value: LDrawFile): value is MpdFile =>
-  (value as MpdFile).type === LDrawFileType.Mpd &&
+export type LDrawFileMpd = {
+  type: 'Mpd';
+  name: string;
+  files: LDrawFilePart | LDrawFileModel;
+  filenames: string[];
+  data: Data[];
+};
+export type LDrawFilePart = {
+  type: 'Part';
+  name: string;
+  files: LDrawFilePart | LDrawFileModel;
+  filenames: string[];
+};
+export type LDrawFileModel = {
+  type: 'Model';
+  name: string;
+  files: LDrawFilePart | LDrawFileModel;
+  filenames: string[];
+};
+export type LDrawFileConfiguration = {
+  type: 'Configuration';
+};
+export type LDrawFile2 =
+  | LDrawFileMpd
+  | LDrawFilePart
+  | LDrawFileModel
+  | LDrawFileConfiguration;
+
+export const isMpd = (value?: LDrawFile | null): value is MpdFile =>
+  value !== null &&
+  (value as MpdFile).type === 'Mpd' &&
   (value as MpdFile).data !== undefined;
 
-export const isSingleFile = (value: LDrawFile): value is SingleFile =>
-  (value as SingleFile).type !== LDrawFileType.Mpd &&
+export const isSingleFile = (value?: LDrawFile | null): value is SingleFile =>
+  value !== null &&
+  (value as SingleFile).type !== 'Mpd' &&
   (value as SingleFile).files !== undefined &&
   (value as SingleFile).name !== undefined;

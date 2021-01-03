@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import {
   AppBar,
   Toolbar,
@@ -9,7 +9,7 @@ import {
 import MenuIcon from '@material-ui/icons/Menu';
 import useStyles from './Header.styles';
 
-const Header = () => {
+const Header = (): ReactElement => {
   const classes = useStyles();
   return (
     <AppBar position="sticky">

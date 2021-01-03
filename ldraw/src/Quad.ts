@@ -1,4 +1,4 @@
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 import { Winding } from './Winding';
 
 //------------------------------------------------------------------------------
@@ -20,10 +20,10 @@ import { Winding } from './Winding';
  *   - x3 y3 z3 is the coordinate of the third point
  *   - x4 y4 z4 is the coordinate of the fourth point
  */
-export class Quad implements Spec {
+export class Quad implements Command {
   lineNo = -1;
-  type = SpecType.QUAD;
-  winding: Winding = Winding.CCW;
+  type: CommandType = 'QUAD';
+  winding: Winding = 'CCW';
   certified = false;
   colour = 0;
   x1 = 0;

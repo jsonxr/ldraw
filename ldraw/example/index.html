@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <script src="https://unpkg.com/ldraw@1.0.0-beta.5/lib/ldraw.min.js"></script>
+    <script>
+      const ldraw = new LDRAW.LDraw()
+      async function main() {
+        const part = await ldraw.find('3001.dat')
+        console.log(part);
+      }
+      main()
+    </script>
+  </body>
+</html>

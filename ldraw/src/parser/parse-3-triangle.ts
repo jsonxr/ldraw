@@ -2,14 +2,14 @@ import { State, CommandParser, ParsedCommand } from './utils';
 import { Triangle } from '../Triangle';
 
 export const TRIANGLE: CommandParser = {
-  match: /^\s*3\s+(.*)$/,
+  match: /^3\s+(.*)$/,
   parseLine: (state: State, cmd: ParsedCommand) => {
     const args = cmd.args[0]
       .trim()
       .split(/\s+/)
       .map((s) => s.trim());
     const triangle = new Triangle({
-      lineNo: state.index,
+      lineNo: state.index + 1,
       certified: state.certified,
       winding: state.winding,
       colour: parseInt(args[0], 10),
@@ -23,7 +23,7 @@ export const TRIANGLE: CommandParser = {
       y3: parseFloat(args[8]),
       z3: parseFloat(args[9]),
     });
-    state.files[state.files.length - 1].specs.push(triangle);
+    state.files[state.files.length - 1].commands.push(triangle);
     return true;
   },
 };

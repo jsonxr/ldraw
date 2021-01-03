@@ -1,4 +1,4 @@
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 
 //------------------------------------------------------------------------------
 // Line Type 5: Optional Line
@@ -46,8 +46,8 @@ import { Spec, SpecType } from './Spec';
  *
  * Optional lines have the same colour rules as normal lines (Line Type 2)
  */
-export class OptionalLine implements Spec {
-  type = SpecType.OPTIONAL_LINE;
+export class OptionalLine implements Command {
+  type: CommandType = 'OPTIONAL_LINE';
   lineNo = -1;
   colour = 0;
   x1 = 0;

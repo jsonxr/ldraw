@@ -2,14 +2,14 @@ import { State, CommandParser, ParsedCommand } from './utils';
 import { Quad } from '../Quad';
 
 export const QUAD: CommandParser = {
-  match: /^\s*4\s+(.*)$/,
+  match: /^4\s+(.*)$/,
   parseLine: (state: State, cmd: ParsedCommand) => {
     const args = cmd.args[0]
       .trim()
       .split(/\s+/)
       .map((s) => s.trim());
     const quad = new Quad({
-      lineNo: state.index,
+      lineNo: state.index + 1,
       certified: state.certified,
       winding: state.winding,
       colour: parseInt(args[0], 10),
@@ -26,7 +26,7 @@ export const QUAD: CommandParser = {
       y4: parseFloat(args[11]),
       z4: parseFloat(args[12]),
     });
-    state.files[state.files.length - 1].specs.push(quad);
+    state.files[state.files.length - 1].commands.push(quad);
     return true;
   },
 };

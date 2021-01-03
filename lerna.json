@@ -1,7 +1,8 @@
 {
   "packages": [
-    "packages/*",
-    "examples/*"
+    "ldraw",
+    "react-ldraw",
+    "ldraw-editor"
   ],
   "version": "independent",
   "useWorkspaces": true,

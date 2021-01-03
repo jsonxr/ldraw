@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { Box, IconButton, Typography } from '@material-ui/core';
 import InfoIcon from '@material-ui/icons/Info';
 import clsx from 'clsx';
-import { LDrawFileType, SingleFile } from 'ldraw';
+import { SingleFile } from 'ldraw';
 import useStyles from './ModelFileCard.style';
 import { Link } from 'react-router-dom';
 import unknown from './unknown.jpg';
@@ -14,7 +14,7 @@ const ModelFileCard = ({ file }: ModelFileCardProps): ReactElement => {
   const link = `https://www.ldraw.org/parts/official-part-lookup.html?partid=${file.name}`;
   const imageName = file.name.replace('.dat', '.png');
   const image =
-    file.type === LDrawFileType.Part
+    file.type === 'Part'
       ? `https://www.ldraw.org/library/official/images/parts/${imageName}`
       : unknown;
   const classes = useStyles();

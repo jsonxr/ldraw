@@ -29,9 +29,7 @@ const parseSingle = (state: State) => {
  */
 export const parse = (data: string): SingleFile | MpdFile | null => {
   const state = getInitialState(
-    data
-      .trim() // Remove beginning and leading strings
-      .split(/\n/) // Split the string into an array of strings
+    data.split(/\n/) // Split the string into an array of strings
   );
 
   let comment = false;

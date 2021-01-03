@@ -1,25 +1,22 @@
+import { Colour } from './Colour';
 import { Data } from './Data';
 import { LDrawFile, LDrawFileType } from './LDrawFile';
 import { Line } from './Line';
+import { Meta } from './Meta';
 import { MetaData } from './MetaData';
 import { OptionalLine } from './OptionalLine';
 import { Quad } from './Quad';
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType, COMMANDTYPE_META } from './Command';
 import { SubFile } from './SubFile';
 import { Triangle } from './Triangle';
 import { distinct } from './utils/distinct';
 
-function getFilteredList<T extends Spec>(specs: Spec[], specType: SpecType) {
-  const subfiles = specs.filter((s) => s.type === specType);
-  return subfiles as T[];
-}
-
 export class SingleFile implements LDrawFile {
-  type: LDrawFileType = LDrawFileType.Unknown;
+  type: LDrawFileType = 'Unknown';
   name = '';
   text = '';
   meta: MetaData = {};
-  readonly specs: Spec[] = [];
+  readonly commands: Command[] = [];
 
   constructor(props?: Partial<SingleFile>) {
     if (props) {
@@ -30,12 +27,9 @@ export class SingleFile implements LDrawFile {
   get data(): Data[] {
     return [];
   }
+
   get files(): SingleFile[] {
     return [this];
-  }
-
-  get subfiles(): SubFile[] {
-    return getFilteredList<SubFile>(this.specs, SpecType.SUBFILE);
   }
 
   get filenames(): string[] {
@@ -45,19 +39,37 @@ export class SingleFile implements LDrawFile {
       .sort();
   }
 
+  getCommands<T extends Command>(type: CommandType | CommandType[]) {
+    const types = Array.isArray(type) ? type : [type];
+    const subfiles = this.commands.filter((s) => types.includes(s.type));
+    return subfiles as T[];
+  }
+
+  get metas(): Meta[] {
+    return this.getCommands<Meta>(COMMANDTYPE_META);
+  }
+
+  get subfiles(): SubFile[] {
+    return this.getCommands<SubFile>('SUBFILE');
+  }
+
   get lines(): Line[] {
-    return getFilteredList<Line>(this.specs, SpecType.LINE) as Line[];
+    return this.getCommands<Line>('LINE') as Line[];
   }
 
   get triangles(): Triangle[] {
-    return getFilteredList<Triangle>(this.specs, SpecType.TRIANGLE);
+    return this.getCommands<Triangle>('TRIANGLE');
   }
 
   get quads(): Quad[] {
-    return getFilteredList<Quad>(this.specs, SpecType.QUAD);
+    return this.getCommands<Quad>('QUAD');
   }
 
   get optionalLines(): OptionalLine[] {
-    return getFilteredList<OptionalLine>(this.specs, SpecType.OPTIONAL_LINE);
+    return this.getCommands<OptionalLine>('OPTIONAL_LINE');
+  }
+
+  get colours(): Colour[] {
+    return this.getCommands<Colour>('COLOUR');
   }
 }

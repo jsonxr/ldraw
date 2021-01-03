@@ -1,3 +1,5 @@
+import { Category } from './Category';
+
 export interface MetaData {
   file?: string;
   description?: string;
@@ -6,7 +8,7 @@ export interface MetaData {
   license?: string;
   help?: string[];
   keywords?: string[];
-  category?: string;
+  category?: Category;
   theme?: string;
   history?: string[];
   update?: string;

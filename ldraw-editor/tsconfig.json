@@ -5,11 +5,11 @@
     "lib": [
       "DOM",
       "DOM.Iterable",
-      "ES2020",
       "ESNext"
     ],
     "types": [
-      "jest"
+      "jest",
+      "node"
     ],
     "allowJs": true,
     "esModuleInterop": true,
@@ -21,10 +21,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src",
-    "learn.js"
+    "src"
   ]
 }

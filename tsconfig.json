@@ -1,17 +1,12 @@
 {
   "extends": "./tsconfig.build.json",
-
   "compilerOptions": {
+    "module": "commonjs", // Needed to allow cmd-click inside projects
     "baseUrl": ".",
     "paths": {
-      "ldraw-cli": ["ldraw-cli/src"],
       "ldraw": ["ldraw/src"],
       "react-ldraw": ["react-ldraw/src"],
       "ldraw-editor": ["ldraw-editor/src"],
     },
-    "jsx": "preserve",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-  },
-  "exclude": ["dist/**/*"]
+  }
 }

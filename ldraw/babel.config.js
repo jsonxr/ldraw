@@ -2,7 +2,10 @@ module.exports = {
   presets: [
     [
       '@babel/preset-env',
-      { targets: { node: 'current' } }, // Do we need this?
+      {
+        bugfixes: true, //https://web.dev/serve-modern-code-to-modern-browsers/
+        targets: { node: 'current' },
+      }, // Do we need this?
     ],
     '@babel/preset-typescript',
     '@babel/preset-react',

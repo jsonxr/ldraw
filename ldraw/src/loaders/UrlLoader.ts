@@ -1,16 +1,22 @@
-import { LoadFile } from '../LoadFile';
+import { LoadFile } from './LoadFile';
 /**
  * Load file via fetch to same server in /ldraw folder
  * @param filename
  */
 
-export const UrlLoader = (base?: URL): LoadFile => async (filename: string) => {
-  const baseUrl: URL = base ?? new URL('/ldraw', new URL(window.location.href));
-  const url = new URL(filename, baseUrl);
-  try {
-    const response = await fetch(`${url.href}`);
-    if (!response.ok) return null;
-    return await response.text();
-  } catch (err) {} // Ignore any errors
-  return null;
+export const UrlLoader = (base?: URL | string): LoadFile => {
+  const baseUrl: URL =
+    typeof base === 'string'
+      ? new URL(base, new URL(window.location.href))
+      : base ?? new URL('/ldraw/', new URL(window.location.href));
+
+  return async (filename: string) => {
+    const url = new URL(filename, baseUrl);
+    try {
+      const response = await fetch(`${url.href}`);
+      if (!response.ok) return null;
+      return await response.text();
+    } catch {} // Ignore any errors
+    return null;
+  };
 };

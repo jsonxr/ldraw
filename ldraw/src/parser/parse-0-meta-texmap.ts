@@ -1,6 +1,5 @@
 import { CommandParser, parseCommand, State } from './utils';
 import { Meta } from '../Meta';
-import { SpecType } from '../Spec';
 
 /**
  * https://www.ldraw.org/texmap-spec.html
@@ -60,9 +59,9 @@ import { SpecType } from '../Spec';
 // 0 !TEXMAP END
 
 const addMeta = (state: State): boolean => {
-  state.files[state.files.length - 1].specs.push(
+  state.files[state.files.length - 1].commands.push(
     new Meta({
-      type: SpecType.TEXMAP,
+      type: 'TEXMAP',
       lineNo: state.index + 1,
       line: state.strings[state.index],
     })
@@ -71,27 +70,27 @@ const addMeta = (state: State): boolean => {
 };
 
 export const TEXMAP_BANG: CommandParser = {
-  match: /^0\s!:\s*(.*)$/,
+  match: /^0\s+!:\s+(.*)$/,
   parseLine: addMeta,
 };
 
 export const TEXMAP_FALLBACK: CommandParser = {
-  match: /^0\s!TEXMAP\sFALLBACK/,
+  match: /^0\s+!TEXMAP\s+FALLBACK/,
   parseLine: addMeta,
 };
 
 export const TEXMAP_END: CommandParser = {
-  match: /^0\s!TEXMAP\sEND/,
+  match: /^0\s+!TEXMAP\s+END/,
   parseLine: addMeta,
 };
 
 export const TEXMAP_START: CommandParser = {
-  match: /^0\s!TEXMAP\sSTART\s*(.*)$/,
+  match: /^0\s+!TEXMAP\s+START\s*(.*)$/,
   parseLine: addMeta,
 };
 
 export const TEXMAP: CommandParser = {
-  match: /^0\s!TEXMAP\s(.*)$/,
+  match: /^0\s!+TEXMAP\s+(.*)$/,
   parseLine: (state: State) => {
     // Ignore all TEXMAP commands
     const line = state.strings[state.index];

@@ -1,7 +1,7 @@
 0 FILE main.ldr
 0 main
 0 Name: main.ldr
-0 Author: Jason Rowland [jason]
+0 Author: Part Author [theauthor]
 0 !LDRAW_ORG Model
 0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
 
@@ -11,7 +11,7 @@
 0 FILE house.ldr
 0 house
 0 Name: house.ldr
-0 Author: Jason Rowland [jason]
+0 Author: Part Author [theauthor]
 0 !LDRAW_ORG Model
 0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
 

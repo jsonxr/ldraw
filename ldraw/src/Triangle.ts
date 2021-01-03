@@ -1,4 +1,4 @@
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 import { Winding } from './Winding';
 
 //------------------------------------------------------------------------------
@@ -21,10 +21,10 @@ import { Winding } from './Winding';
  * See also the comments about polygons at the end of the Line Type 4 section.
  */
 
-export class Triangle implements Spec {
-  type = SpecType.TRIANGLE;
-  lineNo = -1;
-  winding: Winding = Winding.CCW;
+export class Triangle implements Command {
+  type: CommandType = 'TRIANGLE';
+  lineNo = 0;
+  winding: Winding = 'CCW';
   certified = false;
   colour = 0;
   x1 = 0;

@@ -1,9 +1,9 @@
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 
-export class Meta implements Spec {
-  type = SpecType.META;
+export class Meta implements Command {
+  type: CommandType = 'META';
   line = '';
-  lineNo = -1;
+  lineNo = 0;
   constructor(props: Partial<Meta>) {
     Object.assign(this, props);
   }

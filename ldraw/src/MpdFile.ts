@@ -4,7 +4,7 @@ import { Data } from './Data';
 import { distinct } from './utils/distinct';
 
 export class MpdFile implements LDrawFile {
-  type: LDrawFileType = LDrawFileType.Mpd;
+  type: LDrawFileType = 'Mpd';
   name = '';
   text = '';
   files: SingleFile[] = [];

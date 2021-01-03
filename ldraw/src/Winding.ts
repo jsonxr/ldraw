@@ -1,4 +1,1 @@
-export enum Winding {
-  CW = 'CW',
-  CCW = 'CCW',
-}
+export type Winding = 'CW' | 'CCW';

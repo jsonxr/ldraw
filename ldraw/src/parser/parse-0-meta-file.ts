@@ -3,7 +3,7 @@ import { SINGLEFILE } from './parse-single';
 import { SingleFile } from '../SingleFile';
 
 export const NOFILE: CommandParser = {
-  match: /^0\sNOFILE/,
+  match: /^0\s+NOFILE/,
   parseLine: (state: State) => {
     while (state.index < state.strings.length) {
       // As long as we have strings to process and we haven't failed yet, keep on processing
@@ -13,7 +13,7 @@ export const NOFILE: CommandParser = {
         continue;
       }
 
-      if (str.match(/^0 [FILE|!DATA]/)) {
+      if (str.match(/^0\s+(?:FILE|!DATA)/)) {
         return false; // don't advance state.index
       } else {
         state.index++;
@@ -25,7 +25,7 @@ export const NOFILE: CommandParser = {
 };
 
 export const FILE: CommandParser = {
-  match: /^0\sFILE\s+(.*)$/,
+  match: /^0\s+FILE\s+(.*)/,
   parseLine: (state: State, { args }: ParsedCommand) => {
     state.files.push(new SingleFile({ name: args[0] }));
     state.index++;

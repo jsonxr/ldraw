@@ -1,4 +1,4 @@
-import { Spec, SpecType } from './Spec';
+import { Command, CommandType } from './Command';
 
 //------------------------------------------------------------------------------
 // Line Type 2: Line
@@ -20,9 +20,9 @@ import { Spec, SpecType } from './Spec';
  * manner colour 24 must be used for the line. It should be remembered that not
  * all renderers display line types 2 and 5
  */
-export class Line implements Spec {
-  lineNo = -1;
-  type = SpecType.LINE;
+export class Line implements Command {
+  lineNo = 0;
+  type: CommandType = 'LINE';
   colour = 0;
   x1 = 0;
   y1 = 0;
@@ -31,7 +31,7 @@ export class Line implements Spec {
   y2 = 0;
   z2 = 0;
 
-  constructor(props?: Omit<Line, 'type'>) {
+  constructor(props?: Partial<Omit<Line, 'type'>>) {
     if (props) {
       Object.assign(this, props);
     }

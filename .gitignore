@@ -7,3 +7,10 @@ results
 .DS_Store
 
 coverage
+__ldraw
+.eslintcache
+.yarn
+
+ldraw/lib
+ldraw/example/ldraw
+react-ldraw/lib

@@ -1,26 +1,23 @@
 import { Meta } from '../Meta';
+import { Category } from '../Category';
 import { CommandParser, parseCommand, ParsedCommand, State } from './utils';
 
 export const CMDLINE: CommandParser = {
-  match: /^0\s!CMDLINE(.*)$/,
+  match: /^0\s+!CMDLINE\s*(.*)$/,
   parseLine: (state: State, { line }: ParsedCommand) => {
-    const file = state.files[state.files.length - 1];
-    file.specs.push(new Meta({ lineNo: state.index + 1, line }));
     return true; // We don't handle this
   },
 };
 
 export const LDCAD: CommandParser = {
-  match: /^0\s!LDCAD(.*)$/,
-  parseLine: (state: State, { line }: ParsedCommand) => {
-    const file = state.files[state.files.length - 1];
-    file.specs.push(new Meta({ lineNo: state.index + 1, line }));
+  match: /^0\s+!LDCAD\s*(.*)$/,
+  parseLine: () => {
     return true; // We don't handle this
   },
 };
 
 export const THEME: CommandParser = {
-  match: /^0\s!THEME(.*)$/,
+  match: /^0\s+!THEME\s*(.*)$/,
   parseLine: (state: State, { args }: ParsedCommand) => {
     const file = state.files[state.files.length - 1];
     file.meta.theme = args[0].trim();
@@ -29,7 +26,7 @@ export const THEME: CommandParser = {
 };
 
 export const HISTORY: CommandParser = {
-  match: /^0\s!HISTORY(.*)$/,
+  match: /^0\s+!HISTORY\s*(.*)$/,
   parseLine: (state: State, { args }: ParsedCommand) => {
     const file = state.files[state.files.length - 1];
     const history = file.meta.history ?? [];
@@ -40,7 +37,7 @@ export const HISTORY: CommandParser = {
 };
 
 export const HELP: CommandParser = {
-  match: /^0\s!HELP(.*)$/,
+  match: /^0\s+!HELP\s*(.*)$/,
   parseLine: (state: State, { args }: ParsedCommand) => {
     const file = state.files[state.files.length - 1];
     const help = file.meta.help ?? [];
@@ -51,19 +48,23 @@ export const HELP: CommandParser = {
 };
 
 export const CATEGORY: CommandParser = {
-  match: /^0\s!CATEGORY(.*)$/,
+  match: /^0\s+!CATEGORY\s*(.*)$/,
   parseLine: (state: State, { args }: ParsedCommand) => {
     const file = state.files[state.files.length - 1];
     // We can only have one CATEGORY, so just ignore if it has one already
     if (!file.meta.category) {
-      file.meta.category = args[0].trim();
+      const category = args[0].trim();
+      file.meta.category = (category as unknown) as Category;
+    } else {
+      // category already exists
+      // throw ParseError.InvalidLDrawFile(state);
     }
     return true;
   },
 };
 
 export const KEYWORDS: CommandParser = {
-  match: /^0\s!KEYWORDS(.*)$/,
+  match: /^0\s+!KEYWORDS\s*(.*)$/,
   parseLine: (state: State, { args }: ParsedCommand) => {
     const file = state.files[state.files.length - 1];
     let keywords = file.meta.keywords ?? [];
@@ -81,7 +82,7 @@ export const KEYWORDS: CommandParser = {
 };
 
 export const META: CommandParser = {
-  match: /^0\s!(\S+)/,
+  match: /^0\s+!(\S+)/,
 
   parseLine: (state: State, { line, args }: ParsedCommand) => {
     const result = parseCommand(state, line, [
@@ -94,16 +95,17 @@ export const META: CommandParser = {
       THEME,
     ]);
 
+    // We don't know what this meta command is, so add to the current spec
+    //if (!result) {
+    // Always add a Meta in the commands
+    state.files[state.files.length - 1].commands.push(
+      new Meta({ lineNo: state.index + 1, line: line })
+    );
+    //}
+
     // Special case code because these are not meant to be in a single file
     if (['FILE', 'NOFILE', 'DATA'].includes(args[0])) {
       return false;
-    }
-
-    // We don't know what this meta command is, so add to the current spec
-    if (!result) {
-      state.files[state.files.length - 1].specs.push(
-        new Meta({ lineNo: state.index + 1, line: line })
-      );
     }
     return true;
   },

@@ -2,14 +2,14 @@ import { State, CommandParser, ParsedCommand } from './utils';
 import { OptionalLine } from '../OptionalLine';
 
 export const OPTIONAL_LINE: CommandParser = {
-  match: /^\s*5\s+(.*)$/,
+  match: /^5\s+(.*)$/,
   parseLine: (state: State, cmd: ParsedCommand) => {
     const args = cmd.args[0]
       .trim()
       .split(/\s+/)
       .map((s) => s.trim());
     const optionalLine = new OptionalLine({
-      lineNo: state.index,
+      lineNo: state.index + 1,
       colour: parseInt(args[0], 10),
       x1: parseFloat(args[1]),
       y1: parseFloat(args[2]),
@@ -24,7 +24,7 @@ export const OPTIONAL_LINE: CommandParser = {
       y4: parseFloat(args[11]),
       z4: parseFloat(args[12]),
     });
-    state.files[state.files.length - 1].specs.push(optionalLine);
+    state.files[state.files.length - 1].commands.push(optionalLine);
     return true;
   },
 };
