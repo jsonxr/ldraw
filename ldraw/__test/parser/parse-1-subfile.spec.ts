@@ -1,3 +1,4 @@
+import { SingleFile } from '../../src/SingleFile';
 import { parse } from '../../src/parser/parse';
 
 describe('"1" - subfile', () => {
@@ -32,5 +33,23 @@ describe('"1" - subfile', () => {
     expect(subfile.g).toEqual(10);
     expect(subfile.h).toEqual(11);
     expect(subfile.i).toEqual(12);
+  });
+
+  it('should parse a subfile filename with spaces', () => {
+    const str = `
+      0 model1.ldr
+      0 Name: model1.ldr
+      0 Author: Part Author [theauthor]
+      0 !LDRAW_ORG Model
+      0 !LICENSE Redistributable under CCAL version 2.0 : see CAreadme.txt
+      1 16 1 2 3 4 5 6 7 8 9 10 11 12 10270 - 819.dat
+      `.trim();
+    // 1 <colour> x y z a b c d e f g h i <file>
+    const parsed = parse(str);
+    expect(parsed?.files?.length).toEqual(1);
+    const file = parsed as SingleFile;
+    expect(file.subfiles.length).toEqual(1);
+    const subfile = file.subfiles[0];
+    expect(subfile.file).toEqual('10270 - 819.dat');
   });
 });

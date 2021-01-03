@@ -40,16 +40,16 @@ import { Meta } from '../Meta';
 
 export const META_NAME: CommandParser = {
   match: /^0\s+Name:\s+(.*)$/,
-  parseLine: (state: State, { line, args }: ParsedCommand) => {
+  parseLine: (state: State, { args }: ParsedCommand): boolean => {
     const file = state.files[state.files.length - 1];
-    file.name = args[0];
+    file.name = args[0]?.replaceAll('\\', '/');
     return true;
   },
 };
 
 export const META_AUTHOR: CommandParser = {
   match: /^0\s+Author:\s+(.*)$/,
-  parseLine: (state: State, { args }: ParsedCommand) => {
+  parseLine: (state: State, { args }: ParsedCommand): boolean => {
     const file = state.files[state.files.length - 1];
     file.meta.author = args[0];
     return true;
@@ -58,7 +58,7 @@ export const META_AUTHOR: CommandParser = {
 
 export const META_LDRAW_ORG: CommandParser = {
   match: /^0\s+!LDRAW_ORG\s+(\S+)(.*)/,
-  parseLine: (state: State, { args }: ParsedCommand) => {
+  parseLine: (state: State, { args }: ParsedCommand): boolean => {
     const file = state.files[state.files.length - 1];
     file.type = args[0] as LDrawFileType;
     file.meta.update = args[1];
@@ -68,7 +68,7 @@ export const META_LDRAW_ORG: CommandParser = {
 
 export const META_LICENSE: CommandParser = {
   match: /^0\s+!LICENSE\s+(.*)$/,
-  parseLine: (state: State, { args }: ParsedCommand) => {
+  parseLine: (state: State, { args }: ParsedCommand): boolean => {
     const file = state.files[state.files.length - 1];
     file.meta.license = args[0];
     return true;
@@ -77,7 +77,7 @@ export const META_LICENSE: CommandParser = {
 
 export const HEADER_META = {
   match: /^0\s+/,
-  parseLine: (state: State, { line }: ParsedCommand) => {
+  parseLine: (state: State, { line }: ParsedCommand): boolean => {
     const result = parseCommand(state, line, [
       META_NAME,
       META_AUTHOR,

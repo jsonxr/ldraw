@@ -6,7 +6,6 @@ import { distinct } from './utils/distinct';
 export class MpdFile implements LDrawFile {
   type: LDrawFileType = 'Mpd';
   name = '';
-  text = '';
   files: SingleFile[] = [];
   data: Data[] = [];
   constructor(props?: Partial<Omit<MpdFile, 'type'>>) {

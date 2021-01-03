@@ -4,7 +4,7 @@
     "react-ldraw",
     "ldraw-editor"
   ],
-  "version": "independent",
+  "version": "1.0.4",
   "useWorkspaces": true,
   "npmClient": "yarn"
 }

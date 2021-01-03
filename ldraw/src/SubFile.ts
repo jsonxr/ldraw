@@ -41,7 +41,7 @@ import { Command, CommandType } from './Command';
 
 export class SubFile implements Command {
   type: CommandType = 'SUBFILE';
-  lineNo: number = 0;
+  lineNo = 0;
   colour = 0;
   x = 0;
   y = 0;

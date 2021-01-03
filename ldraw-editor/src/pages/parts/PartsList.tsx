@@ -1,4 +1,10 @@
-import React, { ChangeEvent, useCallback, useState, ReactElement } from 'react';
+import React, {
+  ChangeEvent,
+  useCallback,
+  useState,
+  ReactElement,
+  useEffect,
+} from 'react';
 import { Button, TextField, Paper, Box } from '@material-ui/core';
 import Autocomplete, {
   AutocompleteRenderInputParams,
@@ -7,6 +13,7 @@ import { SingleFile } from 'ldraw';
 import { useLDraw } from 'react-ldraw';
 import PartList from './components/PartList';
 import useStyles from './PartsList.styles';
+import LDrawLoading from './components/LDrawLoading';
 
 const PartsList = (): ReactElement => {
   console.log('PartsList');
@@ -20,14 +27,14 @@ const PartsList = (): ReactElement => {
   const changeText = useCallback((value: string) => setUrl(value), []);
 
   const onModelChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    changeText(`/library/${e.target.value}`);
+    changeText(`${e.target.value}`);
   };
 
   const onAutoChange = (
     event: React.ChangeEvent<unknown>,
     value: string | null
   ): void => {
-    changeText(`/library/${value}`);
+    changeText(`${value}`);
   };
 
   const onClick = useCallback(async () => {
@@ -45,9 +52,9 @@ const PartsList = (): ReactElement => {
             style={{ flexGrow: 1 }}
             options={[
               'models/multi.mpd',
-              'parts/3001.dat',
-              'parts/3070a.dat',
-              'parts/3070b.dat',
+              '3001.dat',
+              '3070a.dat',
+              '3070b.dat',
               'models/10270 - Bookshop.mpd',
               'models/10179-1 - Millennium Falcon - UCS.mpd',
               'models/76042 - The SHIELD Helicarrier.mpd',
@@ -65,6 +72,7 @@ const PartsList = (): ReactElement => {
           />
           <Button onClick={onClick}>Get Model</Button>
         </Box>
+        <LDrawLoading />
         <PartList parts={parts} />
       </Paper>
     </Box>

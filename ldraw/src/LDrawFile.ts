@@ -19,7 +19,6 @@ export type LDrawFileType =
 
 export interface LDrawFile {
   name: string;
-  text: string;
   type: LDrawFileType;
   files: SingleFile[];
   //data: Data[];

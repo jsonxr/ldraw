@@ -13,4 +13,7 @@ __ldraw
 
 ldraw/lib
 ldraw/example/ldraw
+ldraw/example/ldraw.*
 react-ldraw/lib
+*.tgz
+

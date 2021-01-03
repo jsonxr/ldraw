@@ -1,2 +1,2 @@
-export * from './FileLoader';
-export * from './UrlLoader';
+export * from './fileLoader';
+export * from './urlLoader';

@@ -5,7 +5,7 @@ export * from './Data';
 export * from './SingleFile';
 export * from './LDrawFile';
 export * from './loaders/LoadFile';
-export * from './loaders/UrlLoader';
+export * from './loaders/urlLoader';
 export * from './Line';
 export * from './Meta';
 export * from './MetaData';

@@ -7,9 +7,8 @@ import Home from './pages/home';
 import About from './pages/about';
 import Parts from './pages/parts';
 
-const ldraw = new LDraw({
-  folders: ['/library/parts/'],
-});
+const ldraw = new LDraw();
+window.ldraw = ldraw;
 
 const App = (): ReactElement => {
   return (

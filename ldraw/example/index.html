@@ -1,11 +1,11 @@
 <html>
   <body>
-    <script src="https://unpkg.com/ldraw/lib/ldraw.min.js"></script>
+    <script src="https://unpkg.com/ldraw/lib/ldraw.js"></script>
     <script>
       const ldraw = new LDRAW.LDraw()
       async function main() {
         const part = await ldraw.find('3001.dat')
-        console.log(part);
+        console.log(ldraw.files);
       }
       main()
     </script>

@@ -1,13 +1,11 @@
 import { State, CommandParser, ParsedCommand } from './utils';
 import { SubFile } from '../SubFile';
+import { cleanFilename } from '../utils/clean-filename';
 
 export const SUBFILE: CommandParser = {
-  match: /^1\s+(.*)$/,
+  match: /^1\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(\S+)\s+(.*)$/,
   parseLine: (state: State, cmd: ParsedCommand) => {
-    const args = cmd.args[0]
-      .trim()
-      .split(/\s+/)
-      .map((s) => s.trim());
+    const { args } = cmd;
     const subfile = new SubFile({
       lineNo: state.index + 1,
       colour: parseInt(args[0], 10),
@@ -23,7 +21,7 @@ export const SUBFILE: CommandParser = {
       g: parseFloat(args[10]),
       h: parseFloat(args[11]),
       i: parseFloat(args[12]),
-      file: args[13].toLowerCase().replaceAll('\\', '/'),
+      file: cleanFilename(args[13]),
     });
     if (state.inverted) subfile.inverted = true;
     // if (state.animated) subfile.animated = true;

@@ -4,7 +4,7 @@ import { CommandParser, parseCommand, ParsedCommand, State } from './utils';
 
 export const CMDLINE: CommandParser = {
   match: /^0\s+!CMDLINE\s*(.*)$/,
-  parseLine: (state: State, { line }: ParsedCommand) => {
+  parseLine: () => {
     return true; // We don't handle this
   },
 };
@@ -85,7 +85,7 @@ export const META: CommandParser = {
   match: /^0\s+!(\S+)/,
 
   parseLine: (state: State, { line, args }: ParsedCommand) => {
-    const result = parseCommand(state, line, [
+    parseCommand(state, line, [
       KEYWORDS,
       CATEGORY,
       HELP,

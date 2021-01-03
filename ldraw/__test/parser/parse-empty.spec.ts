@@ -1,6 +1,5 @@
 import { SingleFile } from '../../src/SingleFile';
 import { parse } from '../../src/parser/parse';
-import { Empty } from 'ldraw/src/Empty';
 
 describe('0 //', () => {
   it('should parse a comment after the header', () => {

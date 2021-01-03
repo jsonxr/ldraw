@@ -4,19 +4,32 @@
 
 ## Issues
 
-You should use workspace commands to add packages instead of changing directories to sub projects.
+* `error An unexpected error occurred: "expected workspace package to exist for \"table\""`
 
-`yarn workspace ldraw-editor add react react-dom --dev`
+    You need to downgrade your version of yarn so you can install...
+    [Github issue](https://github.com/yarnpkg/yarn/issues/7734)
+    ```
+    yarn policies set-version 1.19.0
+    ```
 
-When adding packages to a subproject, it may be necessary to `yarn nuke`.  If you see the folowing:
 
-```bash
-Oops! Something went wrong! :(
+* `Oops! Something went wrong! :(`
 
-ESLint: 7.11.0
+    When adding packages to a subproject, it may be necessary to `yarn nuke`.  If you see the folowing:
 
-ESLint couldn't find the plugin "eslint-plugin-prettier".
-```
+    ```bash
+    Oops! Something went wrong! :(
+
+    ESLint: 7.11.0
+
+    ESLint couldn't find the plugin "eslint-plugin-prettier".
+    ```
+
+    You should use workspace commands to add packages instead of changing directories to sub projects.
+
+    ```
+    yarn workspace ldraw-editor add react react-dom --dev
+    ```
 
 ## Editor
 

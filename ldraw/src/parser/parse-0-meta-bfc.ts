@@ -1,4 +1,3 @@
-import { Meta } from '../Meta';
 import { ParseError } from './ParseError';
 import { State, CommandParser, parseCommand, ParsedCommand } from './utils';
 

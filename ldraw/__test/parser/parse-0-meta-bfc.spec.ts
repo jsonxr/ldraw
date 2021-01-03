@@ -1,4 +1,3 @@
-import { Winding } from '../../src/Winding';
 import { parse } from '../../src/parser/parse';
 import { Meta } from '../../src/Meta';
 import { ParseError } from '../../src/parser/ParseError';

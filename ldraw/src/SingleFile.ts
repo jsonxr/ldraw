@@ -14,7 +14,6 @@ import { distinct } from './utils/distinct';
 export class SingleFile implements LDrawFile {
   type: LDrawFileType = 'Unknown';
   name = '';
-  text = '';
   meta: MetaData = {};
   readonly commands: Command[] = [];
 
@@ -39,7 +38,7 @@ export class SingleFile implements LDrawFile {
       .sort();
   }
 
-  getCommands<T extends Command>(type: CommandType | CommandType[]) {
+  getCommands<T extends Command>(type: CommandType | CommandType[]): T[] {
     const types = Array.isArray(type) ? type : [type];
     const subfiles = this.commands.filter((s) => types.includes(s.type));
     return subfiles as T[];

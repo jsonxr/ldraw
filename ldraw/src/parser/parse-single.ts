@@ -1,4 +1,4 @@
-import { State, parseStrings, ProcessorFn, CommandParser } from './utils';
+import { State, parseStrings, ProcessorFn } from './utils';
 import { BFC } from './parse-0-meta-bfc';
 import { HISTORY, META } from './parse-0-meta';
 import { TEXMAP, TEXMAP_BANG } from './parse-0-meta-texmap';
@@ -13,7 +13,6 @@ import { CONFIGURATION } from './parse-configuration';
 
 export const SINGLEFILE: ProcessorFn = (state: State) => {
   const file = state.files[state.files.length - 1];
-  const start = state.index;
   HEADER.process(state);
   if (file.type === 'Configuration') {
     CONFIGURATION(state);
@@ -33,6 +32,4 @@ export const SINGLEFILE: ProcessorFn = (state: State) => {
       OPTIONAL_LINE,
     ]);
   }
-  const stop = state.index;
-  file.text = state.strings.slice(start, stop).join('\n');
 };

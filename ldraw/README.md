@@ -116,8 +116,9 @@ const { FileLoader } = require('ldraw/lib/loaders');
 ## Browser
 
 LDraw will attempt to downlaod files from the same origin that the script is
-downloade from.  It defaults to `/ldraw` folder which can be changed. So, if
-you run the server then it will attempt to find files in http://127.0.0.1/ldraw/
+downloaded from.  It defaults to `/ldraw` folder which can be changed. So, if
+you run the server as mentioned above, then it will attempt to find files in
+http://127.0.0.1/ldraw/
 
 ```javascript
 import { LDraw } from 'ldraw';
@@ -167,7 +168,32 @@ main();
 
 By default, the ldraw library looks in /parts, /p, /models folder of a default LDraw directory.  When accessing these through a browser, in the console logs you will see a lot of failed attempts.  The reason this is happening is that when a file references a part, it uses a relative filename
 
-## FileLoader
+```javascript
+import { url } from './loaders/url'
+const loader = urlLoader({ dir: '/ldraw', folders: ['parts', 'p', 'models'] });
+const loader = urlLoader({ dir: '/ldraw', folders: ['parts', 'p', 'models'] });
+loader('3001.dat');
+loader('/parts/3001.dat');
+```
+
+Examples:
+* `https://www.jasonrowland.com/ldraw/library/3001.dat`
+* `/ldraw/library/3001.dat`
+* `3001.dat`
+
+## fileLoader
+
+The file loader will load from the file system. It is restricted to the current working directory unless `dir` is passed as a parameter. If folders array is provided, it will prepend it to the filename until it finds the file requested.
+
+```javascript
+const loader = fileLoader({ dir: '/opt/ldraw', folders: ['parts', 'p', 'models'] });
+loader('3001.dat');
+loader('/parts/3001.dat');
+```
+
+Examples:
+* `/parts/3001.dat` - Absolute will only look at the root of dir and not attempt folders
+* `3001.dat`
 
 To configure LDraw to look at a file system, you need to use the FileLoader
 
