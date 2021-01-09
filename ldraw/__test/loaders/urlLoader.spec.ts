@@ -1,5 +1,5 @@
 import fetchMock from 'jest-fetch-mock';
-import { urlLoader } from '../../src/loaders/urlLoader';
+import { urlLoader } from '../../src/browser/urlLoader';
 
 fetchMock.enableMocks();
 jest.spyOn(global.console, 'warn');

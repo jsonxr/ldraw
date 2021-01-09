@@ -8,8 +8,8 @@ import { cleanFilename } from './utils/clean-filename';
 // MPD - Multi-Part Document
 // LDR - Lego
 // DAT
-import { LoadFile } from './loaders/LoadFile';
-import { urlLoader } from './loaders/urlLoader';
+import { LoadFile } from './LoadFile';
+//import { urlLoader } from '../browser/urlLoader';
 import { observable } from './utils/observable';
 import { promiseCache } from './utils/promiseCache';
 
@@ -21,9 +21,7 @@ import { promiseCache } from './utils/promiseCache';
  * base: URL - This is the location of the ldraw library. This end point must have CORS enabled if it is not hosted on the same server
  */
 export class LDraw {
-  // Defaults for the LDraw object when instantiated
-  static defaultUrl = 'https://www.jasonrowland.com/ldraw/library/';
-
+  static defaultLoaders: LoadFile[] = [];
   readonly missing: string[] = [];
 
   //private readonly _cache = new Cache<LDrawFile>();
@@ -41,7 +39,7 @@ export class LDraw {
     throttle: 20,
   });
 
-  private _loaders: LoadFile[] = [urlLoader(LDraw.defaultUrl)];
+  private _loaders: LoadFile[] = [...LDraw.defaultLoaders];
   private _loading = false;
 
   // Implement the observable to monitor filename changes

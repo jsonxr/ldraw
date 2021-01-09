@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { LoadFile } from './LoadFile';
-import { cleanFilename } from '../utils/clean-filename';
+import { LoadFile } from '../shared/LoadFile';
+import { cleanFilename } from '../shared/utils/clean-filename';
 
 /**
  * Creates a fileLoader to ooad a file from the filesystem

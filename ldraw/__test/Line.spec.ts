@@ -1,4 +1,4 @@
-import { Line } from '../src/Line';
+import { Line } from '../src/shared/Line';
 
 describe('Line', () => {
   it('should have a default constructor', () => {

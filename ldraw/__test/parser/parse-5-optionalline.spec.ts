@@ -1,4 +1,4 @@
-import { parse } from '../../src/parser/parse';
+import { parse } from '../../src/shared/parser/parse';
 
 describe('"5" - optional line', () => {
   it('should add an optional line', () => {

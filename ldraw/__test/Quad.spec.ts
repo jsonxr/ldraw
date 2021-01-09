@@ -1,4 +1,4 @@
-import { Quad } from '../src/Quad';
+import { Quad } from '../src/shared/Quad';
 
 describe('Quad', () => {
   it('should have a default constructor', () => {

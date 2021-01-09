@@ -1,4 +1,4 @@
-import { parse } from '../../src/parser/parse';
+import { parse } from '../../src/shared/parser/parse';
 
 describe('"2" - line', () => {
   it('should add a line', () => {

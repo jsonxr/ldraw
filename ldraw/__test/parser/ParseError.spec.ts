@@ -1,4 +1,4 @@
-import { ParseError } from '../../src/parser/ParseError';
+import { ParseError } from '../../src/shared/parser/ParseError';
 
 describe('parser/ParseError', () => {
   describe('new ParseError', () => {

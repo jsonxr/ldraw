@@ -1,6 +1,6 @@
-import { SingleFile } from '../../src/SingleFile';
-import { parse } from '../../src/parser/parse';
-import { getColours } from '../../src/Colours';
+import { SingleFile } from '../../src/shared/SingleFile';
+import { parse } from '../../src/shared/parser/parse';
+import { getColours } from '../../src/shared/Colours';
 
 describe('0 !COLOUR', () => {
   it('should parse basic', () => {

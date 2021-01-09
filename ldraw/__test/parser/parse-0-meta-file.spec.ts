@@ -1,4 +1,4 @@
-import { parse } from '../../src/parser/parse';
+import { parse } from '../../src/shared/parser/parse';
 
 describe('0 FILE', () => {
   it('should parse a file inside an mpd', () => {

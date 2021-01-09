@@ -5,8 +5,8 @@ import {
   parseCommand,
   parseNextLine,
   parseStrings,
-} from '../../src/parser/utils';
-import { ParseError } from '../../src/parser/ParseError';
+} from '../../src/shared/parser/utils';
+import { ParseError } from '../../src/shared/parser/ParseError';
 
 describe('parser/utils', () => {
   describe('chompCommand', () => {

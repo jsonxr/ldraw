@@ -1,5 +1,5 @@
-import { parse } from '../../src/parser/parse';
-import { ParseError } from '../../src/parser/ParseError';
+import { parse } from '../../src/shared/parser/parse';
+import { ParseError } from '../../src/shared/parser/ParseError';
 
 describe('parser/parse', () => {
   it('should throw an error if encounters an unknown command', () => {

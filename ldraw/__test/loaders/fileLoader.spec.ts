@@ -1,4 +1,4 @@
-import { fileLoader } from '../../src/loaders/fileLoader';
+import { fileLoader } from '../../src/node/fileLoader';
 import fs from 'fs/promises';
 import path from 'path';
 

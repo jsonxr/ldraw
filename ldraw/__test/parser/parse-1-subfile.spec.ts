@@ -1,5 +1,5 @@
-import { SingleFile } from '../../src/SingleFile';
-import { parse } from '../../src/parser/parse';
+import { SingleFile } from '../../src/shared/SingleFile';
+import { parse } from '../../src/shared/parser/parse';
 
 describe('"1" - subfile', () => {
   it('should parse a subfile line', () => {

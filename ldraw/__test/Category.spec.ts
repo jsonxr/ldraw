@@ -1,4 +1,4 @@
-import { isCategory } from '../src/Category';
+import { isCategory } from '../src/shared/Category';
 
 describe('Category', () => {
   describe('isCategory', () => {

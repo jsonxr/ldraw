@@ -1,4 +1,4 @@
-import { ParseError } from '../src/parser/ParseError';
+import { ParseError } from '../src/shared/parser/ParseError';
 
 describe('ParseError', () => {
   it('should have a default constructor', () => {

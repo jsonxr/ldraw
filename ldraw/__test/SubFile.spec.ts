@@ -1,4 +1,4 @@
-import { SubFile } from '../src/SubFile';
+import { SubFile } from '../src/shared/SubFile';
 
 describe('SubFile', () => {
   it('should have a default constructor', () => {

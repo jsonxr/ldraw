@@ -1,4 +1,4 @@
-import { parse } from '../../src/parser/parse';
+import { parse } from '../../src/shared/parser/parse';
 import { SingleFile } from 'ldraw';
 
 describe('parser/parse', () => {

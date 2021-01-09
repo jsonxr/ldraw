@@ -1,20 +1,3 @@
-//export * from './types';
-export * from './Comment';
-export * from './Command';
-export * from './Data';
-export * from './SingleFile';
-export * from './LDrawFile';
-export * from './loaders/LoadFile';
-export * from './loaders/urlLoader';
-export * from './Line';
-export * from './Meta';
-export * from './MetaData';
-export * from './MpdFile';
-export * from './OptionalLine';
-export * from './parser/ParseError';
-export * from './parser/parse';
-export * from './Quad';
-export * from './SubFile';
-export * from './Triangle';
-export * from './Winding';
-export * from './LDraw';
+// We only want to export the shared folder so our IDE will only give us types
+// that are common across node and browser.
+export * from './shared';

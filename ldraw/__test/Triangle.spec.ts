@@ -1,4 +1,4 @@
-import { Triangle } from '../src/Triangle';
+import { Triangle } from '../src/shared/Triangle';
 
 describe('Triangle', () => {
   it('should have a default constructor', () => {

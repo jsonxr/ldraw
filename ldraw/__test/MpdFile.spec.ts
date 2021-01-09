@@ -1,6 +1,6 @@
-import { MpdFile } from '../src/MpdFile';
-import { SingleFile } from '../src/SingleFile';
-import { SubFile } from '../src/SubFile';
+import { MpdFile } from '../src/shared/MpdFile';
+import { SingleFile } from '../src/shared/SingleFile';
+import { SubFile } from '../src/shared/SubFile';
 
 describe('MpdFile', () => {
   it('should assign properties in constructor', () => {

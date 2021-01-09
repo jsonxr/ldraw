@@ -1,4 +1,4 @@
-import { distinct } from '../../src/utils/distinct';
+import { distinct } from '../../src/shared/utils/distinct';
 
 describe('utils/distinct', () => {
   it('should return only unique strings', () => {

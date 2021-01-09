@@ -1,5 +1,5 @@
-import { LoadFile } from './LoadFile';
-import { cleanFilename } from '../utils/clean-filename';
+import { LoadFile } from '../shared/LoadFile';
+import { cleanFilename } from '../shared/utils/clean-filename';
 
 /**
  * Load file via fetch to same server in /ldraw folder

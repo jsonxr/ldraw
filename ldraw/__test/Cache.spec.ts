@@ -1,4 +1,4 @@
-import { Cache } from '../src/Cache';
+import { Cache } from '../src/shared/Cache';
 
 describe('Cache', () => {
   let cache: Cache<string>;

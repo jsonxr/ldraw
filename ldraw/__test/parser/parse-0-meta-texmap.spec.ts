@@ -1,6 +1,6 @@
-import { parse } from '../../src/parser/parse';
-import { Meta } from '../../src/Meta';
-import { SingleFile } from '../../src/SingleFile';
+import { parse } from '../../src/shared/parser/parse';
+import { Meta } from '../../src/shared/Meta';
+import { SingleFile } from '../../src/shared/SingleFile';
 
 describe('0 !TEXMAP', () => {
   it('should ignore !TEXMAP', () => {

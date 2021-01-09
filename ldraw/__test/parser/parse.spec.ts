@@ -1,11 +1,11 @@
-import { ParseError } from '../../src/parser/ParseError';
-import { parse } from '../../src/parser/parse';
-import { SINGLEFILE } from '../../src/parser/parse-single';
-import { MPDFILE } from '../../src/parser/parse-mpd';
-import { State } from '../../src/parser/utils';
+import { ParseError } from '../../src/shared/parser/ParseError';
+import { parse } from '../../src/shared/parser/parse';
+import { SINGLEFILE } from '../../src/shared/parser/parse-single';
+import { MPDFILE } from '../../src/shared/parser/parse-mpd';
+import { State } from '../../src/shared/parser/utils';
 
-jest.mock('../../src/parser/parse-single');
-jest.mock('../../src/parser/parse-mpd');
+jest.mock('../../src/shared/parser/parse-single');
+jest.mock('../../src/shared/parser/parse-mpd');
 
 describe('parser/parse', () => {
   beforeEach(() => {

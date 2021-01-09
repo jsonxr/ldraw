@@ -1,7 +1,7 @@
-import { parse } from '../../src/parser/parse';
-import { Meta } from '../../src/Meta';
-import { ParseError } from '../../src/parser/ParseError';
-import { SingleFile } from '../../src/SingleFile';
+import { parse } from '../../src/shared/parser/parse';
+import { Meta } from '../../src/shared/Meta';
+import { ParseError } from '../../src/shared/parser/ParseError';
+import { SingleFile } from '../../src/shared/SingleFile';
 
 describe('0 BFC - BFC Language Extension', () => {
   it('should throw error if no text after BFC', () => {

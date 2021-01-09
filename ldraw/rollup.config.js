@@ -1,5 +1,6 @@
 import pkg from './package.json';
 import typescript from '@wessberg/rollup-plugin-ts';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 
 const common = {
@@ -13,11 +14,13 @@ const common = {
 
 export default [
   {
-    input: ['src/index.ts'],
+    input: ['src/node/index.ts'],
+    external: ['fs/promises', 'path'],
     output: [
       {
         ...common,
-        dir: 'lib',
+        //dir: 'lib',
+        file: 'lib/index.js',
         format: 'esm',
       },
       {
@@ -25,40 +28,34 @@ export default [
         file: 'lib/cjs/index.js',
         format: 'cjs',
       },
-      {
-        ...common,
-        file: 'lib/ldraw.min.js',
-        format: 'umd',
-        name: 'LDRAW',
-        esModule: false,
-        plugins: [terser()],
-      },
-      {
-        ...common,
-        file: 'lib/ldraw.js',
-        format: 'umd',
-        name: 'LDRAW',
-        esModule: false,
-      },
     ],
     plugins: [typescript({ tsconfig: 'tsconfig.build.json' })],
   },
 
   {
-    input: ['src/loaders/index.ts'],
-    external: ['fs/promises', 'path'],
+    input: ['src/browser/index.ts'],
     output: [
       {
         ...common,
-        file: 'lib/loaders/index.js',
+        file: 'lib/ldraw.js',
         format: 'esm',
       },
       {
         ...common,
-        file: 'lib/cjs/loaders/index.js',
-        format: 'cjs',
+        file: 'lib/ldraw.umd.js',
+        format: 'umd',
+        name: 'LDRAW',
+        esModule: false,
+      },
+      {
+        ...common,
+        file: 'lib/ldraw.umd.min.js',
+        format: 'umd',
+        name: 'LDRAW',
+        esModule: false,
+        plugins: [terser()],
       },
     ],
-    plugins: [typescript({ tsconfig: 'tsconfig.build.json' })],
+    plugins: [typescript({ tsconfig: 'tsconfig.build.json' }), nodeResolve()],
   },
 ];

@@ -1,4 +1,4 @@
-import { OptionalLine } from '../src/OptionalLine';
+import { OptionalLine } from '../src/shared/OptionalLine';
 
 describe('OptionalLine', () => {
   it('should have a default constructor', () => {

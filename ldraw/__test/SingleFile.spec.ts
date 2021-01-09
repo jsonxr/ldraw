@@ -1,11 +1,11 @@
-import { SingleFile } from '../src/SingleFile';
-import { Line } from '../src/Line';
-import { Comment } from '../src/Comment';
-import { SubFile } from '../src/SubFile';
-import { Triangle } from '../src/Triangle';
-import { Quad } from '../src/Quad';
-import { OptionalLine } from '../src/OptionalLine';
-import { Colour } from 'ldraw/src/Colour';
+import { SingleFile } from '../src/shared/SingleFile';
+import { Line } from '../src/shared/Line';
+import { Comment } from '../src/shared/Comment';
+import { SubFile } from '../src/shared/SubFile';
+import { Triangle } from '../src/shared/Triangle';
+import { Quad } from '../src/shared/Quad';
+import { OptionalLine } from '../src/shared/OptionalLine';
+import { Colour } from 'ldraw/src/shared/Colour';
 
 describe('SingleFile', () => {
   let file: SingleFile;

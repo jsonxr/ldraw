@@ -1,6 +1,6 @@
-import { LDraw } from '../src/LDraw';
-import { LDrawFile } from '../src/LDrawFile';
-import { ParseError } from '../src/parser/ParseError';
+import { LDraw } from '../src/shared/LDraw';
+import { LDrawFile } from '../src/shared/LDrawFile';
+import { ParseError } from '../src/shared/parser/ParseError';
 import assets from './assets';
 
 const header = assets('header.dat');

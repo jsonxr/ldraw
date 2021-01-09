@@ -1,8 +1,8 @@
-import { ParseError } from '../../src/parser/ParseError';
-import { MPDFILE } from '../../src/parser/parse-mpd';
-import { parseStrings, State } from '../../src/parser/utils';
+import { ParseError } from '../../src/shared/parser/ParseError';
+import { MPDFILE } from '../../src/shared/parser/parse-mpd';
+import { parseStrings, State } from '../../src/shared/parser/utils';
 
-jest.mock('../../src/parser/utils');
+jest.mock('../../src/shared/parser/utils');
 
 describe('parser/parse', () => {
   it('should not go into infinite loop on programming mistake', () => {
