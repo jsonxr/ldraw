@@ -57,9 +57,3 @@ export const isMpd = (value?: LDrawFile | null): value is MpdFile =>
   value !== null &&
   (value as MpdFile).type === 'Mpd' &&
   (value as MpdFile).data !== undefined;
-
-export const isSingleFile = (value?: LDrawFile | null): value is SingleFile =>
-  value !== null &&
-  (value as SingleFile).type !== 'Mpd' &&
-  (value as SingleFile).files !== undefined &&
-  (value as SingleFile).name !== undefined;

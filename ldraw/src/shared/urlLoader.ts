@@ -1,21 +1,37 @@
-import { LoadFile } from '../shared/LoadFile';
-import { cleanFilename } from '../shared/utils/clean-filename';
+import { LoadFile } from './LoadFile';
+import { cleanFilename } from './utils/clean-filename';
+
+//https://www.ldraw.org/library/official/<filepath>
+
+const defaultHref: string =
+  // window
+  (typeof self === 'object' && self.self === self && self?.location.href) ||
+  // node
+  (typeof global === 'object' &&
+    global.global === global &&
+    global?.location?.href) ||
+  // default
+  'https://www.ldraw.org/library/official/';
 
 /**
  * Load file via fetch to same server in /ldraw folder
  * @param filename
  */
-
 export const urlLoader = (
   root: URL | string = '',
   folders: string[] = []
 ): LoadFile => {
+  console.log('root: ', root);
+  // Figure out the root url
+
   const baseUrl: URL =
     typeof root === 'string'
-      ? new URL(root, new URL(window.location.href))
-      : root ?? new URL('/ldraw/', new URL(window.location.href));
-
-  // Warn User in case they didn't send in ldraw/
+      ? root
+        ? new URL(root)
+        : new URL(defaultHref)
+      : root instanceof URL
+      ? root
+      : new URL('/ldraw/', new URL(defaultHref));
   if (baseUrl.pathname && !baseUrl.pathname.endsWith('/')) {
     console.warn(
       `URL.pathname: "${baseUrl.pathname}" does not end with a slash and may not function as expected`

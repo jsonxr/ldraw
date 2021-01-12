@@ -1,4 +1,5 @@
-import { LDrawFileType, isMpd, isSingleFile } from '../src/shared/LDrawFile';
+import { LDrawFileType, isMpd } from '../src/shared/LDrawFile';
+import { isSingleFile } from '../src/shared/SingleFile';
 
 describe('LDrawFile', () => {
   const mpdFile = {

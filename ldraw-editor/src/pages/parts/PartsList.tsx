@@ -38,9 +38,13 @@ const PartsList = (): ReactElement => {
   };
 
   const onClick = useCallback(async () => {
-    const model = await ldraw.load(url);
-    console.log('model: ', model);
-    setParts(ldraw.parts);
+    try {
+      const model = await ldraw.load(url);
+      console.log('model: ', model);
+      setParts(ldraw.parts);
+    } catch (err) {
+      console.error(err);
+    }
   }, [ldraw, url]);
   return (
     <Box className={classes.root}>

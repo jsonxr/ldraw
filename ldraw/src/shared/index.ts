@@ -2,7 +2,6 @@
 export * from './Comment';
 export * from './Command';
 export * from './Data';
-export * from './SingleFile';
 export * from './LDraw';
 export * from './LDrawFile';
 export * from './LoadFile';
@@ -14,6 +13,8 @@ export * from './OptionalLine';
 export * from './parser/ParseError';
 export * from './parser/parse';
 export * from './Quad';
+export * from './SingleFile';
 export * from './SubFile';
 export * from './Triangle';
+export * from './urlLoader';
 export * from './Winding';

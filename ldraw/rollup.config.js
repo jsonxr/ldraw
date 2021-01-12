@@ -15,11 +15,10 @@ const common = {
 export default [
   {
     input: ['src/node/index.ts'],
-    external: ['fs/promises', 'path'],
+    external: ['fs/promises', 'path', 'url', 'node-fetch'],
     output: [
       {
         ...common,
-        //dir: 'lib',
         file: 'lib/index.js',
         format: 'esm',
       },
@@ -57,5 +56,19 @@ export default [
       },
     ],
     plugins: [typescript({ tsconfig: 'tsconfig.build.json' }), nodeResolve()],
+  },
+
+  {
+    input: ['src/cli/index.ts'],
+    external: ['handlebars', 'path', 'url', 'fs/promises'],
+    output: [
+      {
+        ...common,
+        file: 'lib/cjs/cli.js',
+        format: 'cjs',
+        exports: 'default',
+      },
+    ],
+    plugins: [typescript({ tsconfig: 'tsconfig.build.json' })],
   },
 ];

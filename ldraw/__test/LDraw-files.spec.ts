@@ -1,5 +1,3 @@
-require('isomorphic-fetch');
-
 import { LDraw } from '../src/shared/LDraw';
 
 // this is a LONG test since we are fetching from the interwebs

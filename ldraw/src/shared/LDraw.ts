@@ -9,7 +9,7 @@ import { cleanFilename } from './utils/clean-filename';
 // LDR - Lego
 // DAT
 import { LoadFile } from './LoadFile';
-//import { urlLoader } from '../browser/urlLoader';
+import { urlLoader } from './urlLoader';
 import { observable } from './utils/observable';
 import { promiseCache } from './utils/promiseCache';
 
@@ -21,7 +21,8 @@ import { promiseCache } from './utils/promiseCache';
  * base: URL - This is the location of the ldraw library. This end point must have CORS enabled if it is not hosted on the same server
  */
 export class LDraw {
-  static defaultLoaders: LoadFile[] = [];
+  static defaultLoaders: LoadFile[] = [urlLoader()];
+
   readonly missing: string[] = [];
 
   //private readonly _cache = new Cache<LDrawFile>();

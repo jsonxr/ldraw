@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "module": "commonjs", // Needed to allow cmd-click inside projects
+    "module": "es2020", // thought commonjs was Needed to allow cmd-click inside projects
     "baseUrl": ".",
     "paths": {
       "ldraw": ["ldraw/src"],

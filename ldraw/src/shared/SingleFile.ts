@@ -72,3 +72,9 @@ export class SingleFile implements LDrawFile {
     return this.getCommands<Colour>('COLOUR');
   }
 }
+
+export const isSingleFile = (value?: LDrawFile | null): value is SingleFile =>
+  value !== null &&
+  (value as SingleFile).type !== 'Mpd' &&
+  (value as SingleFile).files !== undefined &&
+  (value as SingleFile).name !== undefined;

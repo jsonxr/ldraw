@@ -17,3 +17,4 @@ ldraw/example/ldraw.*
 react-ldraw/lib
 *.tgz
 
+.yarnrc

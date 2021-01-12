@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { LDraw } from 'ldraw';
+import { LDraw, urlLoader } from 'ldraw';
 import { LDrawProvider } from 'react-ldraw';
 import Header from './Header';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -7,7 +7,8 @@ import Home from './pages/home';
 import About from './pages/about';
 import Parts from './pages/parts';
 
-const ldraw = new LDraw();
+const loader = urlLoader('https://www.jasonrowland.com/ldraw/library/');
+const ldraw = new LDraw({ loaders: [loader] });
 window.ldraw = ldraw;
 
 const App = (): ReactElement => {
